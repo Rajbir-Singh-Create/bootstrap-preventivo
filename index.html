@@ -36,7 +36,67 @@
         </nav>
     </header>
     <main>
+        <div class="container">
+            <div class="row-col">
+                <div class="col">
 
+                    <!-- Title section -->
+                    <div class="mt-3">
+                        <h1>Richiesta preventivo</h1>
+                        <p>compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
+                    </div>
+
+                    <!-- Form -->
+                    <!-- TODO: aggiungere la action -->
+                    <form action="">
+                        <div class="mb-3">
+                            <label class="form-label">Nome</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Cognome</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tipo di lavoro</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Seleziona il tipo di lavoro</option>
+                                <option value="1">Sviluppo Back-end</option>
+                                <option value="2">Sviluppo Front-end</option>
+                                <option value="3">Project Analysis</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Textarea con Bootstrap 5</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Codice Promozionale (opzionale)</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-check mb-5">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Accetto la Privacy Policy</label>
+                        </div>
+                        <div class="container">
+                            <div class="row justify-content-around">
+                                <div class="col-5">
+                                    <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                                </div>
+                                <div class="col-5">
+                                    <p><strong>Prezzo finale <br> € 200</strong>,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
     </main>
     <!-- Import libreria Bootstrap e script js -->
     <script src="./js/script.js"></script>
