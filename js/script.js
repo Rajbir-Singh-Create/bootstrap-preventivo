@@ -1,6 +1,6 @@
 // Import degli elementi da manipolare e dichiarazione delle variabili
 const preventiveRequestForm = document.querySelector(".preventiveRequestForm");
-// const calculateButton = document.querySelector(".calculateButton");
+const calculateButton = document.querySelector(".calculateButton");
 let result = document.querySelector(".result");
 let finalPrice = 0;
 
@@ -10,7 +10,24 @@ const promoCodes = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 preventiveRequestForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    estimateCalculation();
+    // Elementi dello stato del bottone
+    const spinnerElement = calculateButton.querySelector('#spinner');
+    const statusText = calculateButton.querySelector('.status');
+    const originalStatusText = statusText.innerHTML;
+
+    // Cambio dello status del bottone
+    calculateButton.disabled = true;
+    spinnerElement.classList.toggle('d-none');
+    statusText.innerHTML = `Calcolo del preventivo...`;
+
+    setTimeout(() => {
+        estimateCalculation();
+
+        // Reset dello status del bottone
+        calculateButton.disabled = false;
+        spinnerElement.classList.toggle('d-none');
+        statusText.innerHTML = originalStatusText;
+    }, 1500);
 });
 
 // Calcolo della commissione

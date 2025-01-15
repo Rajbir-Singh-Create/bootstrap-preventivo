@@ -75,7 +75,8 @@
                             <label class="form-label">Codice Promozionale (opzionale)</label>
                             <input type="text" class="form-control promoCodeInput">
                             <div class="invalid-feedback">
-                                Il codice inserito non è valido, il prezzo finale è stato calcolato senza applicare lo sconto
+                                Il codice inserito non è valido, il prezzo finale è stato calcolato senza applicare lo
+                                sconto
                             </div>
                         </div>
                         <div class="form-check mb-3">
@@ -85,7 +86,10 @@
                         <div class="container">
                             <div class="row justify-content-around">
                                 <div class="col-md-5 text-center my-2">
-                                    <button type="submit" class="btn btn-primary calculateButton">Calcola preventivo</button>
+                                    <button type="submit" class="btn btn-primary calculateButton">
+                                        <span id="spinner" class="d-none spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                        <span class="status" role="status">Calcola preventivo</span>
+                                    </button>
                                 </div>
                                 <div class="col-md-5 text-center my-2 result">
                                     <p><strong>Prezzo finale <br> € 00</strong>,00</p>
