@@ -63,7 +63,9 @@ function estimateCalculation() {
 
     // Conversione e restituzione del risultato del prezzo finale in forma umana
     finalPrice = finalPrice.toFixed(2).replace(".", ",");
-    result.innerHTML = `<p><strong>Prezzo finale <br> € ${finalPrice} </strong></p>`;
+    finalPrice = finalPrice.toString().split(",");
+    // console.log(finalPrice);
+    result.innerHTML = `<p><strong>Prezzo finale <br> € ${finalPrice[0]}</strong>,${finalPrice[1]}</p>`;
     // console.log(finalPrice);
 }
 
