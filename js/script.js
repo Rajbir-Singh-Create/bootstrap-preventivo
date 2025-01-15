@@ -3,8 +3,19 @@ const preventiveRequestForm = document.querySelector(".preventiveRequestForm");
 const calculateButton = document.querySelector(".calculateButton");
 let result = document.querySelector(".result");
 let finalPrice = 0;
+const commission = document.querySelector(".commission");
 
 const promoCodes = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
+
+// BONUS: Array di oggetti per generare dinamicamente le opzioni nella select
+const SelectOptions = [
+    {value: "1", label: "Sviluppo Back-end"},
+    {value: "2", label: "Sviluppo Front-end"},
+    {value: "3", label: "Project Analysis"}
+]
+
+// Chiamata della funzione al caricamento della pagina per generare le opzioni della select
+populateSelect(commission, SelectOptions);
 
 // Intercettazione del submit
 preventiveRequestForm.addEventListener("submit", function (event) {
@@ -34,7 +45,6 @@ preventiveRequestForm.addEventListener("submit", function (event) {
 function estimateCalculation() {
 
     // Import degli elementi da manipolare e dichiarazione delle variabili utili
-    const commission = document.querySelector(".commission");
     const workHoursRequired = 10;
     const backendDev = 20.50;
     const frontendDev = 15.30;
@@ -51,7 +61,7 @@ function estimateCalculation() {
 
     promoCodeCheck();
 
-    // conversione e restituzione del risultato del prezzo finale in forma umana
+    // Conversione e restituzione del risultato del prezzo finale in forma umana
     finalPrice = finalPrice.toFixed(2).replace(".", ",");
     result.innerHTML = `<p><strong>Prezzo finale <br> € ${finalPrice} </strong></p>`;
     // console.log(finalPrice);
@@ -75,3 +85,19 @@ function promoCodeCheck() {
         promoCodeInput.classList.add("is-invalid");
     }
 }
+
+// BONUS: funzione per generare dinamicamente le opzioni
+function populateSelect(selectElement, SelectOptions) {
+    // console.log(selectElement.innerHTML);
+    // Rimozione di eventuali opzioni esistenti, tranne quella di default
+    selectElement.innerHTML = '<option value="">Seleziona il tipo di lavoro</option>';
+    // console.log(selectElement.innerHTML);
+
+    // Aggiunta delle nuove opzioni
+    SelectOptions.forEach(function(option) {
+      const optionElement = document.createElement('option');
+      optionElement.value = option.value;
+      optionElement.textContent = option.label;
+      selectElement.appendChild(optionElement);
+    });
+  }
