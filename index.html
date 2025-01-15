@@ -45,23 +45,23 @@
                     </div>
 
                     <!-- Form -->
-                    <form>
+                    <form class="preventiveRequestForm">
                         <div class="mb-3">
                             <label class="form-label">Nome</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control name" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Cognome</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control surname" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <input type="email" class="form-control">
+                            <input type="email" class="form-control mail" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Tipo di lavoro</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleziona il tipo di lavoro</option>
+                            <select class="form-select commission" aria-label="Default select example" required>
+                                <option value="">Seleziona il tipo di lavoro</option>
                                 <option value="1">Sviluppo Back-end</option>
                                 <option value="2">Sviluppo Front-end</option>
                                 <option value="3">Project Analysis</option>
@@ -69,23 +69,26 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Textarea con Bootstrap 5</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control requestDescription" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Codice Promozionale (opzionale)</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control promoCodeInput">
+                            <div class="invalid-feedback">
+                                Il codice inserito non è valido, il prezzo finale è stato calcolato senza applicare lo sconto
+                            </div>
                         </div>
                         <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input privacyPolicyCheck" type="checkbox" value="" required>
                             <label class="form-check-label">Accetto la Privacy Policy</label>
                         </div>
                         <div class="container">
                             <div class="row justify-content-around">
                                 <div class="col-md-5 text-center my-2">
-                                    <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                                    <button type="submit" class="btn btn-primary calculateButton">Calcola preventivo</button>
                                 </div>
-                                <div class="col-md-5 text-center my-2">
-                                    <p><strong>Prezzo finale <br> € 200</strong>,00</p>
+                                <div class="col-md-5 text-center my-2 result">
+                                    <p><strong>Prezzo finale <br> € 00</strong>,00</p>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +100,7 @@
                     <div class="card mt-3 mx-3">
                         <img src="./img/help-desk.jpg" class="card-img-top" alt="help desk img">
                         <div class="card-body">
-                            <h5 class="card-title">I nostri contatti</h5>
+                            <h5 class="card-title"><strong>I nostri contatti</strong></h5>
                             <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
                         </div>
                         <ul class="list-group list-group-flush">
