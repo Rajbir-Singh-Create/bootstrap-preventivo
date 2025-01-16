@@ -18,7 +18,7 @@ const SelectOptions = [
 populateSelect(commission, SelectOptions);
 
 // Intercettazione del submit
-preventiveRequestForm.addEventListener("submit", function (event) {
+preventiveRequestForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
     // Elementi dello stato del bottone
@@ -44,7 +44,7 @@ preventiveRequestForm.addEventListener("submit", function (event) {
 // Calcolo della commissione
 function estimateCalculation() {
 
-    // Import degli elementi da manipolare e dichiarazione delle variabili utili
+    // Dichiarazione delle variabili utili
     const workHoursRequired = 10;
     const backendDev = 20.50;
     const frontendDev = 15.30;
